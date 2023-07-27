@@ -5,6 +5,10 @@
 
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__button/header__button.css);
+@import url(./blocks/header/__email/header__email.css);
+@import url(./blocks/header/__link/header__link.css);
+@import url(./blocks/header/__user/header__user.css);
 
 @import url(./blocks/profile/profile.css);
 @import url(./blocks/profile/__avatar/profile__avatar.css);
@@ -48,11 +52,16 @@
 @import url(./blocks/popup/__close-button/_type/popup__close_type_image.css);
 @import url(./blocks/popup/__close-button/_type/popup__close_type_new-place.css);
 @import url(./blocks/popup/__close-button/_type/popup__close-button_type_avatar.css);
+@import url(./blocks/popup/__close-button/_type/popup__close-button_type_tooltip.css);
+@import url(./blocks/popup/__text-status/popup__text-status.css);
+@import url(./blocks/popup/__image-status/popup__image-status.css);
 @import url(./blocks/popup/_type/popup_type_edit.css);
 @import url(./blocks/popup/_type/popup_type_image.css);
 @import url(./blocks/popup/_type/popup_type_new-place.css);
 @import url(./blocks/popup/_type/popup_type_delete-card.css);
 @import url(./blocks/popup/_type/popup_type_avatar.css);
+@import url(./blocks/popup/_type/popup_type_tooltip.css);
+
 
 @import url(./blocks/form/form.css);
 @import url(./blocks/form/__button/form__button.css);
@@ -69,3 +78,11 @@
 @import url(./blocks/form/_type/form_type_add-card.css);
 @import url(./blocks/form/_type/form_type_avatar.css);
 @import url(./blocks/form/_type/form_type_edit-profile.css);
+
+@import url(./blocks/authorization/authorization.css);
+@import url(./blocks/authorization/__button/authorization__button.css);
+@import url(./blocks/authorization/__form/authorization__form.css);
+@import url(./blocks/authorization/__input/authorization__input.css);
+@import url(./blocks/authorization/__link/authorization__link.css);
+@import url(./blocks/authorization/__signup/authorization__signup.css);
+@import url(./blocks/authorization/__title/authorization__title.css);
