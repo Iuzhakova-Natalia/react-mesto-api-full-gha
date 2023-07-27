@@ -1,0 +1,28 @@
+.profile__ava-button {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  padding: 0;
+  border: none;
+  margin-right: 30px;
+  background-color: transparent;
+}
+
+.profile__ava-button::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url(../../../images/ava-button.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 26px 26px;
+  opacity: 0;
+  content: "";
+}
+
+.profile__ava-button:hover::before {
+  opacity: 1;
+  cursor: pointer;
+}
+

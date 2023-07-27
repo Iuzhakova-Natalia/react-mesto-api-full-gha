@@ -1,0 +1,13 @@
+.card__like-namber {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  justify-items: center;
+  text-align: center;
+  margin: 0;
+  padding: 3px 0 0;
+    
+  color: #000000;  
+}
