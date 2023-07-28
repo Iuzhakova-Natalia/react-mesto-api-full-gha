@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 130.193.52.143
 
-Frontend https://...
+Frontend https://mesto-frontend.nomoreparties.sbs
 
-Backend https://...
+Backend https://mesto-backend.nomoreparties.sbs
