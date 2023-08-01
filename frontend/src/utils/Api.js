@@ -3,6 +3,13 @@ class Api {
     this._baseUrl = baseUrl;
     this._headers = headers;
   }
+
+  _updateHeaders() {
+    this._headers = {
+      ...this._headers,
+      Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
+    };
+  }
   
   // проверить ответ сервера
   _checkResponse(res) {
@@ -14,6 +21,7 @@ class Api {
 
   // получить данные о пользователе
   getUserInfo() {
+    this._updateHeaders();
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'GET',
       headers: this._headers
@@ -48,6 +56,7 @@ class Api {
 
   // получить карточки
   getCards() {
+    this._updateHeaders();
     return fetch(`${this._baseUrl}/cards`, {
       method: 'GET',
       headers: this._headers,
@@ -87,9 +96,10 @@ class Api {
 
 }
 
-const api = new Api({baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-64',
+const api = new Api({baseUrl:  "http://localhost:3001",// 'https://mesto.nomoreparties.co/v1/cohort-64', //
 headers: {
-  authorization: 'f399a358-b7ca-4b29-94a1-1f340ae5085a',
+  Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
+  // authorization: 'f399a358-b7ca-4b29-94a1-1f340ae5085a',
   'Content-Type': 'application/json'
 }
 });

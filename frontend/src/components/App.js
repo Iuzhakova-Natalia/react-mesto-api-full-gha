@@ -44,7 +44,9 @@ function App() {
   useEffect(() => {
     if (isLoggedIn) {
       Promise.all([api.getUserInfo(), api.getCards()])
+         
         .then(([user, cards]) => {
+          console.log(user);
           setCurrentUser(user);
           setCards(cards);
         })
@@ -66,7 +68,7 @@ function App() {
     auth
       .getContent(token)
       .then((user) => {
-        setUserData(user.data);
+        setUserData(user);
         setIsLoggedIn(true);
         navigate("/");
       })
@@ -103,7 +105,6 @@ function App() {
       .then((res) => {
         setToken(res.token);
         localStorage.setItem("jwt", res.token);
-
         navigate("/");
       })
       .catch((err) => {
