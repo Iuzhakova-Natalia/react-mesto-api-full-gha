@@ -7,7 +7,7 @@ class Api {
   _updateHeaders() {
     this._headers = {
       ...this._headers,
-      Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
+      Authorization: `Bearer ${localStorage.getItem("jwt") || ""}`,
     };
   }
   
@@ -23,32 +23,32 @@ class Api {
   getUserInfo() {
     this._updateHeaders();
     return fetch(`${this._baseUrl}/users/me`, {
-      method: 'GET',
+     // method: 'GET',
       headers: this._headers
     })
       .then(this._checkResponse)
   }
 
   // обновить данные о пользователе
-  patchUserInfo({ name, about }) {
+  patchUserInfo(user) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
-        name,
-        about
+        name: user.name,
+        about: user.about
       })
     })
       .then(this._checkResponse)
   }
   
   // обновить аватар пользователя
-  patchAvatar({ avatar }) {
+  patchAvatar(user) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
-        avatar
+        avatar: user.avatar
       })
     })
       .then(this._checkResponse)
@@ -65,7 +65,7 @@ class Api {
   }
 
   // добавить карточку
-  postCard({ name, link }) {
+  postCard({name, link}) {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
       headers: this._headers,
@@ -98,7 +98,7 @@ class Api {
 
 const api = new Api({baseUrl:  "http://localhost:3001",// 'https://mesto.nomoreparties.co/v1/cohort-64', //
 headers: {
-  Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
+  Authorization: `Bearer ${localStorage.getItem("jwt") || ""}`,
   // authorization: 'f399a358-b7ca-4b29-94a1-1f340ae5085a',
   'Content-Type': 'application/json'
 }

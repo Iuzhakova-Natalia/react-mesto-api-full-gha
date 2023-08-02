@@ -46,7 +46,7 @@ function App() {
       Promise.all([api.getUserInfo(), api.getCards()])
          
         .then(([user, cards]) => {
-          console.log(user);
+          //console.log(user);
           setCurrentUser(user);
           setCards(cards);
         })
@@ -122,7 +122,7 @@ function App() {
   };
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((item) => item._id === currentUser._id);
+    const isLiked = card.likes.some((id) => id === currentUser._id);
     api
       .changeLikeCardStatus(card._id, isLiked)
       .then((newCard) => {
@@ -146,11 +146,11 @@ function App() {
       });
   }
 
-  function handleUpdateUser(items) {
+  function handleUpdateUser(item) {
     api
-      .patchUserInfo(items)
+      .patchUserInfo(item)
       .then((user) => {
-        setCurrentUser(user);
+        setCurrentUser(user.user);
         closeAllPopups();
       })
       .catch((err) => {
@@ -162,7 +162,7 @@ function App() {
     api
       .patchAvatar(item)
       .then((user) => {
-        setCurrentUser(user);
+        setCurrentUser(user.user);
         closeAllPopups();
       })
       .catch((err) => {
