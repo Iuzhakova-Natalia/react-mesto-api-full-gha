@@ -108,6 +108,7 @@ function App() {
         navigate("/");
       })
       .catch((err) => {
+        setIsOpenInfoTooltip(true);
         console.log(err);
         setLoginError("Что-то пошло не так! Попробуйте ещё раз.");
       });

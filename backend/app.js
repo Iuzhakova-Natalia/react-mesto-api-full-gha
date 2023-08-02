@@ -9,7 +9,7 @@ const routes = require('./routes');
 const error = require('./middlewares/erorr');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT, DB_PORT } = process.env;
+const { PORT = 3001, DB_PORT = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 const app = express();
 
 mongoose.connect(DB_PORT);
