@@ -96,7 +96,7 @@ class Api {
 
 }
 
-const api = new Api({baseUrl:  "http://localhost:3001",// 'https://mesto.nomoreparties.co/v1/cohort-64', //
+const api = new Api({baseUrl: "https://mesto-backend.nomoreparties.sbs", //"http://localhost:3001",
 headers: {
   Authorization: `Bearer ${localStorage.getItem("jwt") || ""}`,
   // authorization: 'f399a358-b7ca-4b29-94a1-1f340ae5085a',
